@@ -7,8 +7,6 @@ const doc = JSON.parse(
 const process = function (doc) {
     let sum = 0;
 
-
-
     if (! Array.isArray(doc) && Object.values(doc).includes('red')) {
         return sum;
     }
