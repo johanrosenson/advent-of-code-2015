@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const doc = JSON.parse(
-    fs.readFileSync('input.txt', 'utf8'),
+    fs.readFileSync('../input.txt', 'utf8'),
 );
 
 const process = function (doc) {

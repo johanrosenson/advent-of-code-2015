@@ -1,6 +1,4 @@
-# https://adventofcode.com/2015/day/2
-
-input = open('input').read().splitlines()
+input = open('../input.txt').read().splitlines()
 
 # input = ['1x1x10']
 

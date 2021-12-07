@@ -1,8 +1,6 @@
-# https://adventofcode.com/2015/day/8
 import re
 
-strings = open('input').read().splitlines()
-# strings = open('example').read().splitlines()
+strings = open('../input.txt').read().splitlines()
 
 strlen_original = 0
 strlen_encoded = 0

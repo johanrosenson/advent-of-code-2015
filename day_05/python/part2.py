@@ -1,7 +1,6 @@
-# https://adventofcode.com/2015/day/5
 from functions import repeated_group, repeated_offset_letter
 
-strings = open('input').read().splitlines()
+strings = open('../input.txt').read().splitlines()
 
 nice_strings = 0
 

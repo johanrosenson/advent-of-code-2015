@@ -1,7 +1,6 @@
-# https://adventofcode.com/2015/day/4
 from hashlib import md5
 
-input = open('input').read()
+input = open('../input.txt').read()
 
 number1 = None
 hash1 = None

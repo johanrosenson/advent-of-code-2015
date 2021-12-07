@@ -1,7 +1,6 @@
-# https://adventofcode.com/2015/day/7
 import re
 
-signals = open('input').read().splitlines()
+signals = open('../input.txt').read().splitlines()
 
 wires = {}
 

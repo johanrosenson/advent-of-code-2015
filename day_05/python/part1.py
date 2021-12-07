@@ -1,7 +1,6 @@
-# https://adventofcode.com/2015/day/5
 from functions import three_vowels, repeated_letter, contains_prohibited
 
-strings = open('input').read().splitlines()
+strings = open('../input.txt').read().splitlines()
 
 nice_strings = 0
 

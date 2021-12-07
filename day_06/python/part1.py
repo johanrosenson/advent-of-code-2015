@@ -1,7 +1,6 @@
-# https://adventofcode.com/2015/day/6
 import re
 
-instructions = open('input').read().splitlines()
+instructions = open('../input.txt').read().splitlines()
 
 grid_size = 1000
 
@@ -19,14 +18,12 @@ def xy(xy):
 def toggle(start, end):
     for x in range(start['x'], end['x']+1):
         for y in range(start['y'], end['y']+1):
-            lights[x][y] += 2
+            lights[x][y] = (0, 1)[lights[x][y] == 0]
 
-def increase(start, end, diff):
+def state(start, end, state):
     for x in range(start['x'], end['x']+1):
         for y in range(start['y'], end['y']+1):
-            lights[x][y] += diff
-            if lights[x][y] < 0:
-                lights[x][y] = 0
+            lights[x][y] = state
 
 for instruction in instructions:
     match = re.search(r'(.+)\s(\d+,\d+).+?(\d+,\d+)', instruction)
@@ -37,12 +34,13 @@ for instruction in instructions:
     if op == 'toggle':
         toggle(start, end)
     else:
-        increase(start, end, (-1, 1)[op == 'turn on'])
+        state(start, end, (0, 1)[op == 'turn on'])
 
-brightness = 0
+turned_on = 0
 
 for x in range(grid_size):
     for y in range(grid_size):
-        brightness += lights[x][y]
+        if lights[x][y] == 1:
+            turned_on += 1
 
-print('Total brightness: {}'.format(brightness))
+print('Turned on: {}'.format(turned_on))

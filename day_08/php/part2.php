@@ -1,9 +1,6 @@
 <?php
 
-// https://adventofcode.com/2015/day/8
-
-$lines = file('input');
-// $lines = file('example');
+$lines = file('../input.txt');
 
 $strlen_original = 0;
 $strlen_encoded = 0;

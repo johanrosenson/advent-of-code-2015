@@ -1,6 +1,4 @@
-# https://adventofcode.com/2015/day/3
-
-input = open('input').read()
+input = open('../input.txt').read()
 
 route = {'0x0': 1}
 x = {0: 0, 1: 0}

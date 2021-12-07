@@ -1,6 +1,4 @@
-# https://adventofcode.com/2015/day/1
-
-input = open('input').read()
+input = open('../input.txt').read()
 
 floor = 0
 

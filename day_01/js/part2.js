@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const input = fs.readFileSync('input.txt', 'utf8');
+const input = fs.readFileSync('../input.txt', 'utf8');
 
 let index = 0;
 let floor = 0;
