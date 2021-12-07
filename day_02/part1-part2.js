@@ -1,13 +1,23 @@
-// run in browser console on input page
+const fs = require('fs');
 
-(function (list, pattern, paper, ribbon, result, l, w, h) {
-    while((result = pattern.exec(list)) !== null) {
-        l = result[1];
-        w = result[2];
-        h = result[3];
-        paper += 2*l*w + 2*w*h + 2*h*l + Math.min(l*w, w*h, h*l);
-        ribbon += Math.min(l*2 + w*2, l*2 + h*2, w*2 + h*2) + l*w*h;
-    }
+const input = fs.readFileSync('input.txt', 'utf8')
+    .split('\n');
 
-    return [paper, ribbon];
-})(document.getElementsByTagName('pre')[0].innerText, /^(\d+)x(\d+)x(\d+)$/gm, 0, 0);
+let paper = 0;
+let ribbon = 0;
+
+input.forEach(function (input) {
+    const [l, w, h] = input.split('x').map(v=>parseInt(v));
+
+    paper += (2*l*w) + (2*w*h) + (2*h*l) + Math.min(l*w, w*h, h*l);
+    ribbon += l*w*h + Math.min(...[
+        l*2 + w*2,
+        w*2 + h*2,
+        h*2 + l*2,
+    ]);
+});
+
+console.log({
+    paper,
+    ribbon,
+});
