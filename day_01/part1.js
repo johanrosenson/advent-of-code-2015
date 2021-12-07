@@ -1,11 +1,7 @@
-// run in browser console on input page
+const fs = require('fs');
 
-(function (input) {
-    var floor = 0;
+const input = fs.readFileSync('input.txt', 'utf8');
 
-    for(var i = 0, imax = input.length; i < imax; i++) {
-        floor += input[i] == '(' ? 1 : -1;
-    }
+const floor = Math.abs(input.split(')').length - input.split('(').length);
 
-    console.log('floor: ' + floor);
-})(document.getElementsByTagName('pre')[0].innerText);
+console.log(floor);

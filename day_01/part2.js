@@ -1,12 +1,16 @@
-// run in browser console on input page
+const fs = require('fs');
 
-(function (input) {
-    var floor = 0;
-    for (var i = 0, imax = input.length; i < imax; i++) {
-        floor += input[i] == '(' ? 1 : -1;
-        if (floor == -1) {
-            console.log('basement: ' + (i+1));
-            break;
-        }
-    }
-})(document.getElementsByTagName('pre')[0].innerText);
+const input = fs.readFileSync('input.txt', 'utf8');
+
+let index = 0;
+let floor = 0;
+
+while (floor >= 0) {
+    floor += input.charAt(index) === '('
+        ? 1
+        : -1;
+
+    index++;
+}
+
+console.log(index);
